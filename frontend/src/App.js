@@ -73,8 +73,8 @@ function App() {
             )
         }
         catch (error) {
-            console.log(error)
-            toast.error(error.toString().substring(0,100))
+            // console.log(error)
+            toast.error("assignment already graded, betting is closed")
         }
     }
 
@@ -88,8 +88,8 @@ function App() {
             await predictionMarket.withdrawGain(signer.toString());
         }
         catch (error) {
-            console.log(error)
-            toast.error(error.toString().substring(0,100))
+            // console.log(error)
+            toast.error("Result not reported yet.")
         }
     }
 
