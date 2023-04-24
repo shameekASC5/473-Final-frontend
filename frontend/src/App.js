@@ -12,7 +12,7 @@ const TEAM = {
     NOT_A: 1
 };
 
-
+var signer;
 function App() {
     const [predictionMarket, setPredictionMarket] = useState(undefined);
     const [myBets, setMyBets] = useState(undefined);
@@ -27,7 +27,7 @@ function App() {
                 predictionMarket.bets(TEAM.NOT_A),
             ]
             );
-
+            signer = signerAddress;
             const betPredictions = {
                 labels: [
                     'A',
@@ -84,7 +84,7 @@ function App() {
 
     const withdrawGain = async() => {
         try {
-            await predictionMarket.withdrawGain();
+            await predictionMarket.withdrawGain(signer);
         }
         catch (error) {
             console.log(error)
