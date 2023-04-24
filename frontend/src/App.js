@@ -84,7 +84,8 @@ function App() {
 
     const withdrawGain = async() => {
         try {
-            await predictionMarket.withdrawGain(signer);
+            console.log(signer);
+            await predictionMarket.withdrawGain(signer.toString());
         }
         catch (error) {
             console.log(error)
